@@ -32,7 +32,6 @@ public class EmployeeController implements HealthIndicator {
         return limitedList;
     }
 
-    // 🔹 Récupérer un employé par son ID
     @GetMapping("/employees/{id}")
     public Optional<Employee> getEmployeeById(@PathVariable Long id) {
         System.out.println("********* EmployeeController getEmployeeById(" + id + ") ");
@@ -41,7 +40,6 @@ public class EmployeeController implements HealthIndicator {
         return employee;
     }
 
-    // 🔹 Endpoint Actuator /health custom
     @Override
     public Health health() {
         System.out.println("****** Actuator : EmployeeController health() ");
